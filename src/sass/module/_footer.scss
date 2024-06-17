@@ -1,0 +1,36 @@
+@use "global" as *;
+
+.footer {
+    background-color: #feff86;
+    padding-top: rem(20);
+    padding-bottom: rem(20);
+}
+
+.footer-logo {
+    width:rem(170);
+    margin-inline:auto;
+    @include mq(md) {
+        width: rem(240);
+    }
+}
+
+.footer-sns {
+    margin-top: rem(20);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap:0 rem(20);
+}
+
+.footer-sns__icon {
+    width:rem(35);
+    @include mq(md) {
+        width:rem(40);
+    }
+}
+
+.footer-copyright {
+    text-align: center;
+    color:#000;
+    margin-top: rem(20);
+}

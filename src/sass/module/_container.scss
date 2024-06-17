@@ -1,0 +1,13 @@
+@use "global" as *;
+
+.container {
+
+    @include mq(md) {
+        max-width: rem(960);
+        margin-inline:auto;
+    }
+}
+
+.container p {
+    color:$accent;
+}

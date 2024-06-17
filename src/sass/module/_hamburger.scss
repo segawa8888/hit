@@ -1,0 +1,133 @@
+@use "global" as *;
+
+.menu-trigger,
+.menu-trigger span {
+  display: inline-block;
+  transition: all .4s;
+  box-sizing: border-box;
+  z-index:12;
+}
+.menu-trigger {
+  position: relative;
+  width: rem(20);
+  height: rem(17);
+  background: none;
+  border: none;
+  appearance: none;
+  cursor: pointer;
+  z-index:12;
+}
+.menu-trigger span {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background-color: $black;
+  border-radius: 4px;
+}
+.menu-trigger span:nth-of-type(1) {
+  top: 0;
+}
+.menu-trigger span:nth-of-type(2) {
+  top: 50%;
+  transform: translateY(-50%);
+}
+.menu-trigger span:nth-of-type(3) {
+  bottom: 0;
+}
+
+.menu-trigger span:nth-of-type(1) {
+  animation: menu-bar01 .3s forwards;
+}
+@keyframes menu-bar01 {
+  0% {
+    transform: translateY(5px) rotate(45deg);
+  }
+  50% {
+    transform: translateY(5px) rotate(0);
+  }
+  100% {
+    transform: translateY(0) rotate(0);
+  }
+}
+.menu-trigger span:nth-of-type(2) {
+  transition: all .25s .25s;
+  opacity: 1;
+}
+.menu-trigger span:nth-of-type(3) {
+  animation: menu-bar02 .3s forwards;
+}
+@keyframes menu-bar02 {
+  0% {
+    transform: translateY(-5px) rotate(-45deg);
+  }
+  50% {
+    transform: translateY(-5px) rotate(0);
+  }
+  100% {
+    transform: translateY(0) rotate(0);
+  }
+}
+.menu-trigger.active span:nth-of-type(1) {
+  animation: active-menu-bar01 .3s forwards;
+  top:rem(0.5);
+}
+@keyframes active-menu-bar01 {
+  0% {
+    transform: translateY(0) rotate(0);
+  }
+  50% {
+    transform: translateY(5px) rotate(0);
+  }
+  100% {
+    transform: translateY(5px) rotate(45deg);
+  }
+}
+.menu-trigger.active span:nth-of-type(2) {
+  opacity: 0;
+}
+.menu-trigger.active span:nth-of-type(3) {
+  animation: active-menu-bar03 .3s forwards;
+  bottom:rem(2.5);
+}
+@keyframes active-menu-bar03 {
+  0% {
+    transform: translateY(0) rotate(0);
+  }
+  50% {
+    transform: translateY(-5px) rotate(0);
+  }
+  100% {
+    transform: translateY(-5px) rotate(-45deg);
+  }
+}
+
+.menu-lists{
+  display: none;
+  background-color: lightgray;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding-top: 50px;
+  text-align: center;
+  z-index:10;
+}
+
+.menu-lists__items {
+  height:inherit;
+  display: flex;
+  //縦並び
+  flex-direction: column;
+  justify-content: center;
+  min-height:rem(400);
+}
+
+.menu-lists__item {
+  width:100%;
+}
+
+.menu-lists__item:nth-child(n+2) {
+  margin-top: rem(20);
+}

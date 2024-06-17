@@ -1,0 +1,54 @@
+@use "global" as *;
+
+.top-panel {
+    margin-top: rem(50);
+    @include mq(md) {
+        margin-top: rem(30);
+    }
+}
+
+.panel {
+    padding-top: rem(20);
+    padding-bottom: rem(20);
+    background: rgb(185,185,185);
+    background: linear-gradient(-45deg, rgba(185,185,185,1) 0%, rgba(255,255,255,1) 20%, rgba(255,255,122,1) 100%);
+    background-color: #FCFCFA;
+    @include mq(md) {
+        padding-top: rem(50);
+        padding-bottom: rem(50);
+        background: rgb(185,185,185);
+        background: linear-gradient(-45deg, rgba(185,185,185,1) 0%, rgba(255,255,255,1) 65%, rgba(255,255,122,1) 100%);
+    }
+}
+
+.panel__image {
+    margin-top: rem(20);
+    @include mq(md) {
+        margin-top: rem(30);
+    }
+}
+
+.panel__info--inner {
+    margin-top: rem(20);
+    @include mq(md) {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+}
+
+.panel__info {
+    @include mq(md) {
+        width:37%;
+    }
+}
+
+.panel__map {
+    margin-top: rem(20);
+    height:rem(250);
+    @include mq(md) {
+        width:60%;
+        height:rem(450);
+        margin-top: 0;
+    }
+}
